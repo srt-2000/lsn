@@ -1,0 +1,5 @@
+first line
+second line
+third line
+TEST TEXT FILE
+READ AND COMMIT PLEASE
