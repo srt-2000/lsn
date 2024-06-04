@@ -1,5 +1,5 @@
-f = open("lesson_test.txt")
-for line in f:
-    line = line.rstrip()
-    print(repr(line))
-f.close()
+import os.path
+
+print(os.getcwd())
+print(os.listdir(".idea"))
+print(os.path.exists("gnom.py"))
