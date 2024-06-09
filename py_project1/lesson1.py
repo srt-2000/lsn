@@ -1,22 +1,10 @@
-import os
-import os.path
-with open('lesson_w.txt', 'w') as rezFile:
-    for currentDir, dirs, files in os.walk('main'):
-        for tmpFile in files:
-            if tmpFile.endswith('.py'):
-                rezFile.write(currentDir)
-                rezFile.write('\n')
-                break
+def mod_checker(x, mod=0):
+    return lambda y: y % x == mod
 
-bands = []
+mod_3 = mod_checker(3)
 
-with open("lesson_w.txt") as fin:
-    for line in fin:
-        bands.append(line.strip())
+print(mod_3(3)) # True
+print(mod_3(4)) # False
 
-bands.sort()
-
-with open("sorted_w.txt", "w") as ft:
-    for band in bands:
-        ft.write(band + "\n")
-
+mod_3_1 = mod_checker(3, 1)
+print(mod_3_1(4)) # True
