@@ -1,10 +1,9 @@
-def mod_checker(x, mod=0):
-    return lambda y: y % x == mod
+s, t = (input() for _ in range(2))
+def f(s, t):
+    cnt = 0
+    for n in range(len(s)):
+        if s.startswith(t, n):
+            cnt += 1
+    return cnt
 
-mod_3 = mod_checker(3)
-
-print(mod_3(3)) # True
-print(mod_3(4)) # False
-
-mod_3_1 = mod_checker(3, 1)
-print(mod_3_1(4)) # True
+print(f(s, t))

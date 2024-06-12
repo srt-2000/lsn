@@ -1,7 +1,8 @@
-with open("dataset_24465_4.txt", "r") as f:
-    n = f.read()
-    n = n.splitlines()
-    n.reverse()
-with open("lesson_w.txt", "w") as w:
-    k = "\n".join(n)
-    w.write(k)
+import re
+import sys
+
+for line in sys.stdin:
+    line = line.strip()
+    if re.search(r"\A[01]+\Z", line):
+        if re.fullmatch(r"REG-EXP", line[::-1]):
+             print(line)
