@@ -1,9 +1,25 @@
-s, t = (input() for _ in range(2))
-def f(s, t):
-    cnt = 0
-    for n in range(len(s)):
-        if s.startswith(t, n):
-            cnt += 1
-    return cnt
+import json
 
-print(f(s, t))
+with open("lesjsn.json", "r") as f:
+    initial = json.load(f)
+
+with_children = {element['name']: [] for element in initial}
+
+for eli in initial:
+    for elc in with_children:
+        if elc in eli['parents']:
+            with_children[elc].append(eli['name'])
+
+for element in with_children:
+    with_children[element] = set(with_children[element])
+
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+    for next in graph[start] - visited:
+        dfs(graph, next, visited)
+    return visited
+
+for element in sorted(with_children.keys()):
+    print(element, ':', len(dfs(with_children, element)))
