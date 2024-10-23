@@ -1,0 +1,28 @@
+<studentslist specific="enclose">
+    <student id="1">
+        <name>
+            Andrey
+        </name>
+        <certificate>
+            True
+        </certificate>
+        <scores>
+            <module1>80</module1>
+            <module2>92</module2>
+            <module3>74</module3>
+        </scores>
+    </student>
+    <student id="1">
+        <name>
+            Grisha
+        </name>
+        <certificate>
+            True
+        </certificate>
+        <scores>
+            <module1>65</module1>
+            <module2>87</module2>
+            <module3>99</module3>
+        </scores>
+    </student>
+</studentslist>
